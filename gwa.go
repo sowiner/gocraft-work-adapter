@@ -52,7 +52,7 @@ type Adapter struct {
 	Enqueur *work.Enqueuer
 	Pool    *work.WorkerPool
 	Logger  Logger
-	ctx     context.Context
+	Ctx     context.Context
 }
 
 // Start starts the adapter event loop.
