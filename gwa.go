@@ -43,7 +43,7 @@ func New(opts Options) *Adapter {
 		Enqueur: enqueuer,
 		Pool:    pool,
 		Logger:  opts.Logger,
-		ctx:     ctx,
+		Ctx:     ctx,
 	}
 }
 
@@ -58,7 +58,7 @@ type Adapter struct {
 // Start starts the adapter event loop.
 func (q *Adapter) Start(ctx context.Context) error {
 	q.Logger.Info("Starting gocraft/work Worker")
-	q.ctx = ctx
+	q.Ctx = ctx
 	go func() {
 		select {
 		case <-ctx.Done():
